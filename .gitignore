@@ -10,4 +10,5 @@ yarn-*
 .env
 .coveralls.yml
 **/__snapshots__
+package-*
 

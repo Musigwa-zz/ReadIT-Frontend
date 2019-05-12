@@ -62,27 +62,24 @@
     img {
       width: 30px;
       height: 30px;
-      margin:30px 20px;
-      cursor:pointer;
+      margin: 30px 20px;
+      cursor: pointer;
     }
   }
 }
 
 .toast {
   position: absolute;
-  font-family: Cormorant Garamond;
-  font-weight: 600;
-  font-size: 24px;
-  font-style: italic;
   text-align: center;
+  font-family: "Gotham-Light";
   color: #fff;
-  padding: 16px;
-  top: 30%;
-  right: 15%;
-  left: 33%;
+  font-weight: 400;
+  font-size: 24px;
+  padding: 16px 0;
   border-radius: 4px;
   text-align: center;
   z-index: 1;
+  min-width: 30%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   visibility: hidden;
 }
@@ -95,7 +92,7 @@
   30%,
   70% {
     opacity: 1;
-    top: 30%;
+    top: 20%;
   }
 }
 
@@ -109,9 +106,12 @@
 
 /* Media query for mini devices (tablets) */
 
-@media only screen and  (min-width: $max-size-mobile) and (max-width: $max-size-tablet) {
+@media only screen and (min-width: $max-size-mobile) and (max-width: $max-size-tablet) {
   .wrapper {
     width: 80%;
+  }
+  .toast {
+    min-width: 50%;
   }
 }
 
@@ -124,5 +124,8 @@
         width: 100%;
       }
     }
+  }
+  .toast {
+    min-width: 90%;
   }
 }

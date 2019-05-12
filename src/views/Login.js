@@ -8,14 +8,14 @@ import {
   socialAuth,
 } from "../redux/actions/authActions";
 import { capitalize } from "../helpers";
-import fbIcon from '../assets/icons/fb-icon.svg';
-import googleIcon from '../assets/icons/google-plus-icon.svg';
-import twitterIcon from '../assets/icons/twitter-icon.svg';
+import fbIcon from "../assets/icons/fb-icon.svg";
+import googleIcon from "../assets/icons/google-plus-icon.svg";
+import twitterIcon from "../assets/icons/twitter-icon.svg";
+import Toast from "../components/common/Toasts";
 
 export class Login extends Component {
-  state = {
-    showToast : false
-  }
+  state = { showToast: false };
+
   handleNavigation = path => <Redirect to={`/${path}`} />;
 
   handleSocialAuth(provider) {
@@ -27,12 +27,13 @@ export class Login extends Component {
 
   render() {
     const { loginSuccess } = this.props;
+    const { showToast } = this.state;
     if (loginSuccess) {
       return this.handleNavigation("");
     }
     return (
       <div className="body">
-        <div id="toast-div" className="toast" style={{visibility: this.state.showToast?"visible":"hidden"}} />
+        {showToast ? <Toast /> : null}
         <section className="wrapper">
           <div className="col-center">
             <div className="header-contain">
@@ -80,7 +81,11 @@ export class Login extends Component {
               ))}
               <p className="rich-text">Forgot your password?</p>
             </form>
-            <button className="submit-btn" type="button" onClick={()=>this.setState({showToast:true})}>
+            <button
+              className="submit-btn"
+              type="button"
+              onClick={() => this.setState({ showToast: !showToast })}
+            >
               login
             </button>
           </div>
