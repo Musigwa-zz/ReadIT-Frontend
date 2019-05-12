@@ -1,0 +1,13 @@
+.sass-cache
+node_modules
+dist
+.coveralls.yml
+coverage
+.vscode
+yarn.*
+yarn-*
+.DS_Store 
+.env
+.coveralls.yml
+**/__snapshots__
+
