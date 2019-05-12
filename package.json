@@ -4,9 +4,10 @@
   "description": "This is a online blogpost platform that connects enthusiast readers with like minded authors",
   "main": "index.js",
   "scripts": {
-    "build": "yarn run clean && webpack --mode production",
+    "deploy": "serve -s dist",
+    "build": "rm -rf dist && webpack --mode production",
     "start": "webpack-dev-server --open --hot",
-    "test": "jest --coverage",
+    "test": "jest --coverage -u",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
@@ -21,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Musigwa/ReadIT-FrontEnd.git"
+    "url": "https://github.com/Musigwa/ReadIT-Frontend.git"
   },
   "keywords": [
     "sass",
@@ -29,7 +30,7 @@
   ],
   "author": "MUSIGWA Pacifique",
   "license": "ISC",
-  "homepage": "https://github.com/Musigwa/ReadIT-FrontEnd#readme",
+  "homepage": "https://github.com/Musigwa/ReadIT-Frontend#readme",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "axios": "^0.18.0",
@@ -52,7 +53,9 @@
     "react-rte": "^0.16.1",
     "redux": "^4.0.1",
     "redux-form": "^8.2.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "serve": "^11.0.0",
+    "server": "^1.0.18"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
