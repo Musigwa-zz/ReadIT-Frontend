@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React, { Component } from "react";
-import Navbar from "../components/common/AppBars/navBar";
+import Navbar from "../components/common/AppBars/Navbar";
 
 class Home extends Component {
   render() {

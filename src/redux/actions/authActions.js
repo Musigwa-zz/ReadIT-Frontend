@@ -1,6 +1,5 @@
-// import "@babel/polyfill";
 import dotenv from "dotenv";
-// import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import axios from "../../utils/axios";
 import {
   LOGIN_INPUT_CHANGE,
@@ -22,6 +21,11 @@ const updateIsSubmitting = () => ({
   type: SUBMITTING_LOGIN_CREDENTIALS,
 });
 
+export const setCurrentUser = user => ({
+  type: SET_CURRENT_USER,
+  payload: user,
+});
+
 const loginSuccess = payload => {
   const { token, message } = payload;
   return {
@@ -38,11 +42,6 @@ const loginFailed = payload => {
   };
 };
 
-export const setCurrentUser = user => ({
-  type: SET_CURRENT_USER,
-  payload: user,
-});
-
 export const handleSignIn = ({ email, password }) => async dispatch => {
   try {
     dispatch(updateIsSubmitting());
@@ -53,7 +52,7 @@ export const handleSignIn = ({ email, password }) => async dispatch => {
     const { token, message } = response.data;
     dispatch(loginSuccess({ token, message }));
     await localStorage.setItem("token", token);
-    // dispatch(setCurrentUser(jwt.decode(token)));
+    dispatch(setCurrentUser(jwt.decode(token)));
   } catch (error) {
     const { message, errors = {} } = error.response.data;
     dispatch(loginFailed({ message, errors }));

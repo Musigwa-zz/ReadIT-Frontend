@@ -2,6 +2,9 @@
   box-sizing: border-box;
   padding: 0em;
   margin: 0em;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 }
 
 h1,
@@ -18,7 +21,7 @@ a {
   text-decoration: none;
 }
 
-input,
-button {
-  outline: none;
+.btn:hover {
+  background-color: $color-primary;
+  color: $color-secondary;
 }
