@@ -3,6 +3,7 @@ node_modules
 .coveralls.yml
 coverage
 .vscode
+dist
 yarn.*
 yarn-*
 .DS_Store 
@@ -10,4 +11,3 @@ yarn-*
 .coveralls.yml
 **/__snapshots__
 package-*
-
