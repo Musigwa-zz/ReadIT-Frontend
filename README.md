@@ -6,7 +6,7 @@ This is the UI implementation of our blogpost platform, but you can check out it
 
 1. After cloning the repository to your local machine with
 
-`git clone https://github.com/Musigwa/ReadIT-FrontEnd.git`
+`git clone https://github.com/Musigwa/ReadIT-Frontend.git`
 and `cd titan-dev-ah-frontend`
 
 2. Run `yarn` to install the project dependencies
@@ -28,4 +28,4 @@ and `cd titan-dev-ah-frontend`
 
 ## Author
 
-- [Musigwa Pacifique](https://github.com/Musigwa) Isaac T.O. Moloantoa, **`the Bassist`**
+- [Musigwa Pacifique](https://github.com/Musigwa) ==> Isaac T.O. Moloantoa, **`the Bassist`**
