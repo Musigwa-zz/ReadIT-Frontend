@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-This is the UI implementation of our blogpost platform, but you can check out its API server from **[here](https://github.com/Musigwa/ReadIT-Frontend)** to explore more.
+This is the UI implementation of our blogpost platform, but you can check out its API server from **[here](https://github.com/Musigwa/ReadIT-Backend)** to explore more.
 
 1. After cloning the repository to your local machine with
 
