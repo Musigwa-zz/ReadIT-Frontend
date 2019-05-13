@@ -14,7 +14,7 @@ export const routes = [
 export default class MainRoutes extends Component {
   render() {
     return (
-      <div>
+      <body>
         <Navbar />
         <Switch>
           {routes.map((route, index) => (
@@ -27,7 +27,7 @@ export default class MainRoutes extends Component {
           ))}
           <Route component={NotFound} />
         </Switch>
-      </div>
+      </body>
     );
   }
 }

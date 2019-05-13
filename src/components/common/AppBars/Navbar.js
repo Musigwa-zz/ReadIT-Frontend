@@ -164,51 +164,53 @@ export class Navbar extends Component {
                         <p className="title">Notifications</p>
                       </div>
                     )}
-                    <div className="notif-wrapper">
-                      {notifications.map((each, k) => (
-                        <div
-                          style={{
-                            cursor: isFetching ? "progress" : "",
-                          }}
-                          key={Number(k + 1)}
-                          className="notif-elmt"
-                        >
-                          <div className="notif-status">
-                            <img
-                              alt="read"
-                              src={each.status === "unread" ? circle : checked}
-                              height={15}
-                              width={15}
-                            />
-                          </div>
+                    {notifications.length > 0 ? (
+                      <div className="notif-wrapper">
+                        {notifications.map((each, k) => (
                           <div
-                            className="notif-message"
-                            onClick={() => this.onNotificationClick(each)}
-                            onKeyPress={() => this.onNotificationClick(each)}
-                            data-test="notif-click"
-                          >
-                            {each.message}
-                            <div className="notif-date">
-                              {moment(each.createdAt).format("lll")}
-                            </div>
-                          </div>
-                          <button
-                            id="close"
-                            type="button"
-                            className="notif-close"
-                            data-test="notif-close"
                             style={{
                               cursor: isFetching ? "progress" : "",
                             }}
-                            onClick={() => this.onNotificationClose(each)}
+                            key={Number(k + 1)}
+                            className="notif-elmt"
                           >
-                            <img alt="close" src={close} height={10} width={10} />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                    {notifications.length <= 0 && (
-                      <p className="notif-end">No more notifications</p>
+                            <div className="notif-status">
+                              <img
+                                alt="read"
+                                src={each.status === "unread" ? circle : checked}
+                                height={15}
+                                width={15}
+                              />
+                            </div>
+                            <div
+                              className="notif-message"
+                              onClick={() => this.onNotificationClick(each)}
+                              onKeyPress={() => this.onNotificationClick(each)}
+                              data-test="notif-click"
+                            >
+                              {each.message}
+                              <div className="notif-date">
+                                {moment(each.createdAt).format("lll")}
+                              </div>
+                            </div>
+                            <button
+                              id="close"
+                              type="button"
+                              className="notif-close"
+                              data-test="notif-close"
+                              style={{
+                                cursor: isFetching ? "progress" : "",
+                              }}
+                              onClick={() => this.onNotificationClose(each)}
+                            >
+                              <img alt="close" src={close} height={10} width={10} />
+                            </button>
+                          </div>
+                        ))}
+                        <p className="notif-end">All notifications were loaded</p>
+                      </div>
+                    ) : (
+                      <p className="notif-end">No more notifications to show</p>
                     )}
                   </div>
                 ) : (

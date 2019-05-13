@@ -12,6 +12,7 @@ import fbIcon from "../assets/icons/fb-icon.svg";
 import googleIcon from "../assets/icons/google-plus-icon.svg";
 import twitterIcon from "../assets/icons/twitter-icon.svg";
 import Toast from "../components/common/Toasts";
+import Input from "../components/common/Inputs/MidInput";
 
 export class Login extends Component {
   state = { showToast: false };
@@ -67,7 +68,7 @@ export class Login extends Component {
             <form className="input-group">
               <p className="title">input your credentials</p>
               {["Email", "Password"].map((elmt, key) => (
-                <input
+                <Input
                   key={Number(key)}
                   className="input"
                   placeholder={capitalize(elmt)}

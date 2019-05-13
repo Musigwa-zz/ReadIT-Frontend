@@ -4,9 +4,9 @@
   "description": "This is a online blogpost platform that connects enthusiast readers with like minded authors",
   "main": "index.js",
   "scripts": {
-    "deploy": "serve -s dist",
-    "build": "rm -rf dist && webpack --mode production",
-    "start": "webpack-dev-server --open --hot",
+    "prestart": "rm -rf dist && webpack --mode production",
+    "start": "serve -s dist",
+    "dev": "webpack-dev-server --open --hot",
     "test": "jest --coverage -u",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
