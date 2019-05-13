@@ -59,6 +59,7 @@
     background-color: $color-primary;
     color: $color-secondary;
   }
+  @content;
 }
 
 @mixin input {
@@ -109,6 +110,15 @@
   cursor: pointer;
   padding: 2.5px 15px 2.5px 5px;
   border-radius: 5px;
-  margin: 2px 2px;
+  margin: 2px;
+  @content;
+}
+
+@mixin scrollable {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  align-items: center;
   @content;
 }
